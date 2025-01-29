@@ -16,7 +16,7 @@ A seasoned Cloud Engineer specializing in enterprise-scale Azure architectures a
 [More details →](./projects/landing-zone.md)
 
 ## Professional Timeline
-[View my professional journey →](./timeline.md)
+[View my professional journey →](./docs/timeline.md)
 
 ## Technical Blog
 [Read my technical insights →](./blog/index.md)
