@@ -1,0 +1,16 @@
+OUName,ParentDN
+CompanyName,
+Users,OU=CompanyName,DC=naitcloud,DC=com
+ServiceAccounts,OU=Users,OU=CompanyName,DC=naitcloud,DC=com
+AdminAccounts,OU=Users,OU=CompanyName,DC=naitcloud,DC=com
+StandardAccounts,OU=Users,OU=CompanyName,DC=naitcloud,DC=com
+Groups,OU=CompanyName,DC=naitcloud,DC=com
+SecurityGroups,OU=Groups,OU=CompanyName,DC=naitcloud,DC=com
+DistributionGroups,OU=Groups,OU=CompanyName,DC=naitcloud,DC=com
+Devices,OU=CompanyName,DC=naitcloud,DC=com
+Servers,OU=Devices,OU=CompanyName,DC=naitcloud,DC=com
+Workstations,OU=Devices,OU=CompanyName,DC=naitcloud,DC=com
+Environments,OU=CompanyName,DC=naitcloud,DC=com
+Dev,OU=Environments,OU=CompanyName,DC=naitcloud,DC=com
+Test,OU=Environments,OU=CompanyName,DC=naitcloud,DC=com
+Prod,OU=Environments,OU=CompanyName,DC=naitcloud,DC=com
