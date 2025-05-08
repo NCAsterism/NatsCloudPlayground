@@ -20,6 +20,8 @@ NatsCloudPlayground/
 ├── projects/                # Featured cloud projects with code
 │   └── alz_bicep/           # Azure Landing Zone Bicep examples
 ├── scripts/                 # Utility scripts
+│   ├── github_pages_commands.ps1   # GitHub Pages helper script with auto-carriage returns
+│   └── validate_github_pages.ps1   # GitHub Pages validation script
 └── .cursor/                 # Cursor IDE configurations
 ```
 
@@ -29,17 +31,24 @@ To run this site locally:
 ```bash
 # Clone the repository
 git clone https://github.com/[username]/NatsCloudPlayground.git
-
-# Navigate to the repository
-cd NatsCloudPlayground
-
-# If using Jekyll (if configured)
-bundle install
-bundle exec jekyll serve
 ```
+
+## Development Best Practices
+
+### PowerShell Scripts
+All PowerShell scripts in this repository follow these best practices:
+
+1. **Automatic Carriage Returns**: Scripts include automatic carriage returns to prevent the need for manual Enter key presses
+2. **Helper Scripts**: Use the provided utility scripts for common tasks:
+   - `scripts/validate_github_pages.ps1` - Validates GitHub Pages configuration
+   - `scripts/github_pages_commands.ps1` - Provides common GitHub Pages management commands
+3. **Documentation**: Each script includes descriptive comments and help text
+
+### GitHub Pages Configuration
+For GitHub Pages configuration details, see the [GitHub Pages Setup Guide](docs/github_pages_setup.md).
 
 ## Implementation Status
 See [task_list.md](task_list.md) for current implementation status.
 
 ## License
-This repository is licensed under [LICENSE](LICENSE). 
+This repository is licensed under [LICENSE](LICENSE).
