@@ -42,11 +42,10 @@ NatsCloudPlayground/
 ├── .git/                    # Git version control files
 ├── .vscode/                 # VSCode workspace settings (optional)
 ├── docs/                    # GitHub Pages website content root (served via /docs)
-│   ├── docs/                # Technical documentation and reference materials (nested)
 │   ├── blog/                # Technical articles and insights
 │   ├── presentations/       # Conference talks and demonstration materials
 │   ├── certifications/      # Professional certifications and achievements
-│   ├── timeline/            # Professional development journey (content may be here or in docs/docs/)
+│   ├── timeline/            # Professional development journey
 │   └── index.md             # Main landing page (this file)
 ├── projects/                # Featured cloud projects with code samples
 │   ├── landing_zone.md      # Example project detail file
@@ -58,7 +57,7 @@ NatsCloudPlayground/
 ```
 
 ## Professional Timeline
-[View my professional journey →](./docs/timeline.md)
+[View my professional journey →](./timeline/timeline.md)
 
 ## Technical Blog
 [Read my technical insights →](./blog/index.md)
