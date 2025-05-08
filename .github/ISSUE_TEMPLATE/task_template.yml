@@ -1,0 +1,94 @@
+---
+name: 'Issue Template'
+description: 'Template for NatTheDevOpsRat GitHub issues.'
+title: '[Category] Brief description of the issue'
+labels: ["enhancement", "bug", "documentation", "task"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task: [Task Name]
+
+        ### Details
+        - **Category**: [Category Label]
+        - **Priority**: [High/Medium/Low]
+        - **Time Estimate**: [1 min/2 mins/3 mins/5 mins/8 mins/13 mins/21 mins/34 mins/55+ mins]
+        - **ADHD Spoons**: [1/2/3/5/8/13]
+        - **Difficulty**: [Easy/Moderate/Hard]
+
+        ### Very Next Step
+        [Write the next actionable step here, e.g., "Search the council website for Resident C parking maps."]
+
+        ### Description
+        [Include additional context, links, or related tasks.]
+
+        ### Notes
+        [Any specific considerations, blockers, or accommodations needed to complete this task.]
+
+        ### Progress
+        - [ ] Task started
+        - [ ] Blocked
+        - [ ] Needs review
+        - [ ] Completed
+
+        ### Links/Attachments
+        [Link to related issues, documents, or resources.]
+
+  - type: input
+    id: title
+    required: true
+    attributes:
+      label: 'Title'
+      description: 'Summarize the issue in a concise sentence.'
+      placeholder: 'Brief description of the issue'
+
+  - type: textarea
+    id: description
+    required: true
+    attributes:
+      label: 'Description'
+      description: 'Provide a detailed explanation of the issue, including steps to reproduce if applicable.'
+      placeholder: 'Write a detailed explanation here.'
+
+  - type: input
+    id: assignees
+    attributes:
+      label: 'Assignees'
+      description: 'Who should work on this issue?'
+      placeholder: 'Enter GitHub usernames'
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 'Priority'
+      description: 'Select the priority level of this issue.'
+      options:
+        - High
+        - Medium
+        - Low
+
+  - type: checkboxes
+    id: tags
+    attributes:
+      label: 'Tags'
+      description: 'Select applicable tags.'
+      options:
+        - label: 'Bug'
+        - label: 'Documentation'
+        - label: 'Enhancement'
+        - label: 'Task'
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: 'Acceptance Criteria'
+      description: 'Define what constitutes a successful resolution of this issue.'
+      placeholder: 'List clear criteria here.'
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: 'Additional Notes'
+      description: 'Add any additional information or references for this issue.'
+      placeholder: 'Include helpful details here.'

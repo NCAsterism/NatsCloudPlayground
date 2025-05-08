@@ -1,25 +1,45 @@
 # Nat's Cloud Portfolio
 
-## About Me
-A seasoned Cloud Engineer specializing in enterprise-scale Azure architectures and Infrastructure as Code (IaC). 
+> Professional portfolio showcasing cloud architecture expertise, infrastructure as code implementations, and technical content.
 
-## Expertise Highlights
-- **Azure Landing Zone Architecture**: Design and implementation of enterprise-scale landing zones using Microsoft's latest practices
-- **Infrastructure as Code**: Extensive experience with Bicep, emphasizing Azure Verified Modules (AVM)
-- **Cloud Governance**: Implementation of robust security and compliance frameworks
+## About This Repository
+This repository serves as a professional portfolio website built with GitHub Pages, showcasing my cloud engineering expertise, project examples, and technical content.
 
-## Featured Projects
-### Enterprise Landing Zone Implementation
-- Leveraging latest Microsoft Enterprise-Scale Landing Zone accelerators
-- Custom Bicep modules for organizational requirements
-- Automated deployment pipelines
-[More details →](./projects/landing-zone.md)
+## View Live Site
+The live site is published at: [https://[username].github.io/NatsCloudPlayground/](https://[username].github.io/NatsCloudPlayground/)
 
-## Professional Timeline
-[View my professional journey →](./docs/timeline.md)
+## Repository Structure
+```
+NatsCloudPlayground/
+├── docs/                    # GitHub Pages content (main website)
+│   ├── blog/                # Technical articles and insights
+│   ├── certifications/      # Professional certifications
+│   ├── presentations/       # Conference talks and materials
+│   ├── timeline/            # Professional development timeline
+│   └── index.md             # Main landing page
+├── projects/                # Featured cloud projects with code
+│   └── alz_bicep/           # Azure Landing Zone Bicep examples
+├── scripts/                 # Utility scripts
+└── .cursor/                 # Cursor IDE configurations
+```
 
-## Technical Blog
-[Read my technical insights →](./blog/index.md)
+## Local Development
+To run this site locally:
 
-## Contact
-[Professional contact details]
+```bash
+# Clone the repository
+git clone https://github.com/[username]/NatsCloudPlayground.git
+
+# Navigate to the repository
+cd NatsCloudPlayground
+
+# If using Jekyll (if configured)
+bundle install
+bundle exec jekyll serve
+```
+
+## Implementation Status
+See [task_list.md](task_list.md) for current implementation status.
+
+## License
+This repository is licensed under [LICENSE](LICENSE). 

@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Portfolio Navigation Guide
+
+This repository is a professional portfolio showcasing cloud architecture expertise, infrastructure as code, and technical content.
+
+## Main Structure
+- [README.md](mdc:README.md) - Project overview
+- [task_list.md](mdc:task_list.md) - Implementation tracking
+
+## Documentation Site
+- [docs/index.md](mdc:docs/index.md) - Main landing page
+- [docs/blog/index.md](mdc:docs/blog/index.md) - Technical blog entries
+- [docs/certifications/index.md](mdc:docs/certifications/index.md) - Professional certifications
+- [docs/presentations/index.md](mdc:docs/presentations/index.md) - Conference talks
+- [docs/timeline/timeline.md](mdc:docs/timeline/timeline.md) - Professional timeline
+
+## Projects
+- [projects/landing_zone.md](mdc:projects/landing_zone.md) - Enterprise Landing Zone implementation
+- [projects/avm_implementations.md](mdc:projects/avm_implementations.md) - Azure Verified Modules
+- [projects/security_frameworks.md](mdc:projects/security_frameworks.md) - Cloud Security Frameworks
+
+## Configuration
+- [docs/_config.yml](mdc:docs/_config.yml) - GitHub Pages configuration
+- [.github/workflows/deploy_github_pages.yml](mdc:.github/workflows/deploy_github_pages.yml) - GitHub Actions workflow
+
+## Automation
+- [scripts/check_links.py](mdc:scripts/check_links.py) - Link validation script
+

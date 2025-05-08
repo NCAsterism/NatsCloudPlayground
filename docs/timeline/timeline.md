@@ -52,4 +52,6 @@ Started with DOS 5 and Windows 3.0 on floppies (yes, actual floppy disks). We do
 ## The Journey Continues...
 From troubleshooting IRQ conflicts to debugging YAML pipelines - the tools change, but the thrill of solving problems remains the same.
 
-[Back to Overview →](./alz/overview.md) 
+## Further Reading
+
+[Back to Overview →](../blog/alz/overview.md) 

@@ -1,0 +1,62 @@
+name: Repository Standardization
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Confirm directory creation'
+        required: true
+        default: 'yes'
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    if: github.event.inputs.confirm == 'yes'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Create standardized directory structure
+        run: |
+          # Create directory structure
+          mkdir -p .github/ISSUE_TEMPLATE
+          mkdir -p .github/PULL_REQUEST_TEMPLATE
+          mkdir -p docs/knowledge/adhd
+          mkdir -p docs/knowledge/health
+          mkdir -p docs/processes
+          mkdir -p docs/templates/daily
+          mkdir -p docs/templates/weekly
+          mkdir -p docs/templates/project
+          mkdir -p docs/releases
+          mkdir -p automation/obsidian_sync
+          mkdir -p automation/health_tracking
+          mkdir -p automation/task_automation
+          mkdir -p projects
+          mkdir -p references/tech_notes
+          
+          # Create placeholder files for empty directories
+          touch docs/knowledge/adhd/.gitkeep
+          touch docs/knowledge/health/.gitkeep
+          touch docs/processes/.gitkeep
+          touch docs/templates/daily/.gitkeep
+          touch docs/templates/weekly/.gitkeep
+          touch docs/templates/project/.gitkeep
+          touch docs/releases/.gitkeep
+          touch automation/obsidian_sync/.gitkeep
+          touch automation/health_tracking/.gitkeep
+          touch automation/task_automation/.gitkeep
+          touch projects/.gitkeep
+          touch references/tech_notes/.gitkeep
+          
+          # Create README files for key directories
+          echo "# Knowledge Base\n\nThis directory contains personal knowledge and reference material." > docs/knowledge/README.md
+          echo "# Processes\n\nStandardized processes and workflows for personal and professional tasks." > docs/processes/README.md
+          echo "# Templates\n\nReusable templates for various task types and documentation." > docs/templates/README.md
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "chore: create standardized directory structure" || echo "No changes to commit"
+          git push
