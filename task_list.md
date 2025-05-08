@@ -6,6 +6,7 @@
   - [x] Add `.nojekyll` file 
   - [x] Set up proper folder structure
   - [x] Create `docs/assets` folder
+  - [ ] Fix GitHub Pages deployment issues
 
 - [x] 2. Fix Content Structure
   - [x] Create blog index page
@@ -56,4 +57,10 @@
   - [ ] Review content
   - [ ] Test navigation
   - [ ] Validate HTML/CSS
-  - [ ] Share portfolio URL 
+  - [ ] Share portfolio URL
+
+## GitHub Pages Deployment Fixes
+- [ ] Add index.html file at root or configure for docs/index.md
+- [ ] Ensure proper branch and folder settings in GitHub Pages
+- [ ] Verify Jekyll theme compatibility
+- [ ] Test site after deployment fixes 
