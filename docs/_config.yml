@@ -3,6 +3,7 @@ title: Nat's Cloud Portfolio
 description: Professional portfolio showcasing cloud architecture expertise and infrastructure as code
 url: https://ncasterism.github.io
 baseurl: /NatsCloudPlayground
+repository: NCAsterism/NatsCloudPlayground
 
 # Theme settings - using Minimal Mistakes theme
 remote_theme: mmistakes/minimal-mistakes@4.24.0
