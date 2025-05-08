@@ -92,7 +92,8 @@ if (Test-Path $indexMdDocs) {
 $workflowFile = ".\.github\workflows\pages.yml"
 if (Test-Path $workflowFile) {
     Write-Host "✅ GitHub Pages workflow file exists" -ForegroundColor Green
-    $workflowContent = Get-Content $workflowFile -Raw    if ($workflowContent -match "actions/deploy-pages") {
+    $workflowContent = Get-Content $workflowFile -Raw
+    if ($workflowContent -match "actions/deploy-pages") {
         Write-Host "  ✅ deploy-pages action is configured in workflow" -ForegroundColor Green
         
         # Check for latest versions
