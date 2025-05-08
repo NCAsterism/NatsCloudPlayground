@@ -6,7 +6,7 @@
 This repository serves as a professional portfolio website built with GitHub Pages, showcasing my cloud engineering expertise, project examples, and technical content.
 
 ## View Live Site
-The live site is published at: [https://[username].github.io/NatsCloudPlayground/](https://[username].github.io/NatsCloudPlayground/)
+The live site is published at: [https://ncasterism.github.io/NatsCloudPlayground/](https://ncasterism.github.io/NatsCloudPlayground/)
 
 ## Repository Structure
 ```
