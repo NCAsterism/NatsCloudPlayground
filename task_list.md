@@ -62,5 +62,4 @@
 ## GitHub Pages Deployment Fixes
 - [x] Add index.html file at root or configure for docs/index.md
 - [x] Ensure proper branch and folder settings in GitHub Pages
-- [ ] Verify Jekyll theme compatibility
-- [ ] Test site after deployment fixes
+
