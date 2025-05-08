@@ -89,12 +89,19 @@ if (Test-Path $indexMdDocs) {
 }
 
 # Check GitHub Pages workflow file
-$workflowFile = ".\.github\workflows\deploy_github_pages.yml"
+$workflowFile = ".\.github\workflows\pages.yml"
 if (Test-Path $workflowFile) {
     Write-Host "✅ GitHub Pages workflow file exists" -ForegroundColor Green
-    $workflowContent = Get-Content $workflowFile -Raw
-    if ($workflowContent -match "actions/deploy-pages") {
+    $workflowContent = Get-Content $workflowFile -Raw    if ($workflowContent -match "actions/deploy-pages") {
         Write-Host "  ✅ deploy-pages action is configured in workflow" -ForegroundColor Green
+        
+        # Check for latest versions
+        if ($workflowContent -match "actions/upload-pages-artifact@v3" -and $workflowContent -match "actions/deploy-pages@v4") {
+            Write-Host "  ✅ Using latest recommended GitHub Pages action versions" -ForegroundColor Green
+        } else {
+            Write-Host "  ❌ Not using the latest recommended GitHub Pages action versions" -ForegroundColor Red
+            $validationPassed = $false
+        }
     } else {
         Write-Host "  ❌ deploy-pages action is missing in workflow" -ForegroundColor Red
         $validationPassed = $false
