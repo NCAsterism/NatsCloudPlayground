@@ -1,0 +1,14 @@
+# Main navigation links
+main:
+  - title: "About"
+    url: /about/
+  - title: "Projects"
+    url: /projects/
+  - title: "Blog"
+    url: /blog/
+  - title: "Timeline"
+    url: /timeline/
+  - title: "Certifications"
+    url: /certifications/
+  - title: "Contact"
+    url: /contact/
