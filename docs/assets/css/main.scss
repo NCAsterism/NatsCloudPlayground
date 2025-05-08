@@ -1,0 +1,163 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* Custom CSS for Nat's Cloud Portfolio */
+
+/* General site-wide adjustments */
+:root {
+  --azure-blue: #0078d4;
+  --azure-dark-blue: #005a9e;
+  --light-gray: #f5f5f5;
+  --dark-gray: #2d2d2d;
+  --off-white: #fafafa;
+}
+
+/* Improved card styling */
+.archive__item {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.archive__item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Feature row improvements */
+.feature__item {
+  margin-bottom: 2em;
+}
+
+.feature__item .archive__item-title {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.feature__item .btn {
+  display: inline-block;
+  margin-top: 1em;
+}
+
+/* Call to action buttons */
+.btn--large {
+  padding: 0.75em 1.5em;
+  font-size: 1.1em;
+}
+
+.text-center {
+  text-align: center;
+  margin: 2em 0;
+}
+
+/* Certification grid */
+.certification-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin: 2em 0;
+}
+
+.certification-item {
+  text-align: center;
+}
+
+.certification-image {
+  max-width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.certification-image:hover {
+  transform: scale(1.05);
+}
+
+.certification-title {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+/* Project page enhancements */
+.page__hero--overlay {
+  padding: 4em 0;
+}
+
+.page__hero--overlay .page__title {
+  font-size: 2.5em;
+}
+
+/* Code block styling */
+div.highlighter-rouge,
+figure.highlight {
+  border-radius: 5px;
+}
+
+/* Enhanced table styling */
+table {
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+th {
+  background-color: var(--azure-blue);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .feature__item {
+    margin-bottom: 3em;
+  }
+  
+  .certification-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Dark mode adjustments */
+.dark-theme {
+  background-color: var(--dark-gray);
+  color: var(--off-white);
+}
+
+/* ADHD-friendly focus styles */
+a:focus, button:focus, input:focus {
+  outline: 3px solid var(--azure-blue);
+  outline-offset: 2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--azure-blue);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Progress indicator for blog posts */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: var(--azure-blue);
+  z-index: 1000;
+  width: 0;
+  transition: width 0.2s ease;
+}

@@ -4,19 +4,68 @@ description: Professional portfolio showcasing cloud architecture expertise and 
 url: https://ncasterism.github.io
 baseurl: /NatsCloudPlayground
 
-# Theme settings - using a simpler theme
-remote_theme: pages-themes/minimal@v0.2.0
+# Theme settings - using Minimal Mistakes theme
+remote_theme: mmistakes/minimal-mistakes@4.24.0
+minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 plugins:
   - jekyll-remote-theme
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Site-wide default settings
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+  # _projects
+  - scope:
+      path: "projects"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      toc: true
+      toc_sticky: true
 
 # Author information
 author:
-  name: Nat
-  email: your-email@example.com
-  linkedin: https://linkedin.com/in/yourprofile
-  github: https://github.com/ncasterism
+  name: "Nat"
+  avatar: "/assets/images/azure-solutions-architect.png"
+  bio: "A seasoned Cloud Engineer specializing in enterprise-scale Azure architectures and Infrastructure as Code (IaC)."
+  location: "Global"
+  email: "contact@example.com"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/yourprofile"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ncasterism"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"
+      url: "https://twitter.com/yourhandle"
+    - label: "Download CV"
+      icon: "fas fa-fw fa-file-pdf"
+      url: "/assets/downloads/Nat-Resume-2025.pdf"
 
 # Build settings
 markdown: kramdown
@@ -41,10 +90,45 @@ header_pages:
   - certifications/index.md
   - presentations/index.md
 
-# Defaults
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      layout: "default" 
+# Minimal Mistakes theme settings
+minimal_mistakes_skin: "air" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Footer
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://linkedin.com/in/yourprofile"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ncasterism"
+    
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /blog/page:num/
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# Analytics
+analytics:
+  provider: false # false (default), "google", "google-universal", "google-gtag", "custom"
+
+# Includes & Excludes
+include:
+  - "*.html"
+  - "*.md"
+  - "_pages"
+  - "_layouts"
+  - "_includes"
+  - "assets"
+  - "blog"
+  - "timeline"
+  - "certifications"
+  - "presentations"
