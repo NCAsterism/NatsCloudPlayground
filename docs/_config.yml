@@ -71,18 +71,6 @@ author:
 markdown: kramdown
 highlighter: rouge
 
-# Explicitly set which files jekyll will read
-include:
-  - "*.html"
-  - "*.md"
-  - "_layouts"
-  - "_includes"
-  - "assets"
-  - "blog"
-  - "timeline"
-  - "certifications"
-  - "presentations"
-
 # Navigation
 header_pages:
   - blog/index.md
