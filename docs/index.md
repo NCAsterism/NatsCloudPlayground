@@ -26,7 +26,8 @@ feature_row:
     excerpt: "Custom contributions to the AVM community with implementation examples and governance frameworks."
     url: "{{ site.baseurl }}/projects/avm_implementations/"
     btn_label: "Learn More"
-    btn_class: "btn--primary"  - image_path: /assets/images/security-thumb.jpg
+    btn_class: "btn--primary"
+  - image_path: /assets/images/security-thumb.jpg
     alt: "Cloud Security"
     title: "Cloud Security Frameworks"
     excerpt: "Zero Trust architecture implementations, security baseline automation, and compliance reporting."
