@@ -18,17 +18,58 @@
   --off-white: #fafafa;
 }
 
+/* Enhanced masthead styling */
+.masthead {
+  background-color: var(--dark-gray);
+  border-bottom: 3px solid var(--azure-blue);
+}
+
+.masthead .site-title {
+  font-weight: bold;
+  color: white;
+}
+
+.masthead .greedy-nav {
+  background: transparent;
+}
+
+.masthead .greedy-nav a {
+  color: white;
+  font-weight: 500;
+}
+
+.masthead .greedy-nav a:hover {
+  color: var(--azure-blue);
+}
+
+.masthead .greedy-nav .visible-links a:before {
+  background: var(--azure-blue);
+  height: 4px;
+}
+
 /* Improved card styling */
 .archive__item {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   height: 100%;
+  background-color: var(--light-gray);
+  overflow: hidden;
 }
 
 .archive__item:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.archive__item .archive__item-teaser img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.archive__item .archive__item-body {
+  padding: 1.5rem;
 }
 
 /* Feature row improvements */
