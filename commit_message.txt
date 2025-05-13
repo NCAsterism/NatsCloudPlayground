@@ -1,0 +1,19 @@
+fix(site): improve layout and fix broken links in GitHub Pages portfolio
+
+This commit addresses layout issues and broken links in the GitHub Pages portfolio site
+by implementing a comprehensive set of improvements:
+
+- Added proper site configuration in _config.yml with masthead_title and search
+- Enhanced navigation.yml with dropdown menus and sidebar navigation
+- Created a dedicated projects index page with proper layout
+- Fixed all internal links by adding site.baseurl to URLs
+- Updated main.scss with comprehensive styling improvements
+- Added project sidebar navigation for better user experience
+- Created proper project pages for AVM implementations and security frameworks
+- Fixed blog index template with proper layout and navigation
+- Added breadcrumb navigation for better user orientation
+
+These changes improve the visual appeal, fix navigation issues, and ensure all
+internal links work correctly with GitHub Pages' baseurl configuration.
+
+Related to: #42
