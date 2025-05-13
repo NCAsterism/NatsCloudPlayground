@@ -10,6 +10,8 @@ header:
   overlay_filter: "0.5"
   overlay_image: /assets/images/landing-zone-banner.jpg
   teaser: /assets/images/landing-zone-thumb.jpg
+sidebar:
+  nav: "projects"
 ---
 
 # Enterprise Landing Zone Implementation

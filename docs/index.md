@@ -7,9 +7,9 @@ header:
   overlay_image: /assets/images/azure-banner.jpg
   actions:
     - label: "View Projects"
-      url: "/projects/"
+      url: "{{ site.baseurl }}/projects/"
     - label: "Contact Me"
-      url: "/contact/"
+      url: "{{ site.baseurl }}/contact/"
 excerpt: "A seasoned Cloud Engineer specializing in enterprise-scale Azure architectures and Infrastructure as Code (IaC)."
 
 feature_row:
@@ -17,21 +17,21 @@ feature_row:
     alt: "Azure Landing Zone"
     title: "Enterprise Landing Zone Implementation"
     excerpt: "Design and implementation of scalable, secure Azure environments using Microsoft's latest enterprise-scale patterns."
-    url: "/projects/landing_zone/"
+    url: "{{ site.baseurl }}/projects/landing_zone/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
   - image_path: /assets/images/avm-thumb.jpg
     alt: "Azure Verified Modules"
     title: "Azure Verified Modules Implementation"
     excerpt: "Custom contributions to the AVM community with implementation examples and governance frameworks."
-    url: "/projects/avm_implementations/"
+    url: "{{ site.baseurl }}/projects/avm_implementations/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
   - image_path: /assets/images/security-thumb.jpg
     alt: "Cloud Security"
     title: "Cloud Security Frameworks"
     excerpt: "Zero Trust architecture implementations, security baseline automation, and compliance reporting."
-    url: "/projects/security_frameworks/"
+    url: "{{ site.baseurl }}/projects/security_frameworks/"
     btn_label: "Learn More"
     btn_class: "btn--primary"
 
@@ -110,7 +110,7 @@ I help organizations build and implement secure, scalable, and efficient Azure c
   {% endfor %}
 </div>
 
-<a href="/blog/" class="btn btn--primary">View All Posts</a>
+<a href="{{ site.baseurl }}/blog/" class="btn btn--primary">View All Posts</a>
 
 ## Certifications & Achievements
 
@@ -123,12 +123,12 @@ I help organizations build and implement secure, scalable, and efficient Azure c
   {% endfor %}
 </div>
 
-<a href="/certifications/" class="btn btn--primary">View All Certifications</a>
+<a href="{{ site.baseurl }}/certifications/" class="btn btn--primary">View All Certifications</a>
 
 ## Let's Connect
 
 <div class="text-center">
-  <a href="/contact/" class="btn btn--success btn--large">Contact Me</a>
+  <a href="{{ site.baseurl }}/contact/" class="btn btn--success btn--large">Contact Me</a>
   <a href="https://calendly.com/your-calendly-link" class="btn btn--info btn--large">Schedule a Meeting</a>
 </div>
 
@@ -153,10 +153,10 @@ NatsCloudPlayground/
 ```
 
 ## Professional Timeline
-[View my professional journey →](./timeline/timeline.md)
+[View my professional journey →]({{ site.baseurl }}/timeline/)
 
 ## Technical Blog
-[Read my technical insights →](./blog/index.md)
+[Read my technical insights →]({{ site.baseurl }}/blog/)
 
 ## Project Contributions
 Interested in my open-source and community contributions? Check out:

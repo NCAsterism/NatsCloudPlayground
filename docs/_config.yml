@@ -9,6 +9,12 @@ repository: NCAsterism/NatsCloudPlayground
 remote_theme: mmistakes/minimal-mistakes@4.24.0
 minimal_mistakes_skin: "dark" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
+# Site configuration for Minimal Mistakes
+masthead_title: "Nat's Cloud Playground"
+breadcrumbs: true  # enabled by default
+search: true
+logo: "/assets/images/azure-solutions-architect.png"
+
 plugins:
   - jekyll-remote-theme
   - jekyll-feed

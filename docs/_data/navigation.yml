@@ -4,6 +4,13 @@ main:
     url: /about/
   - title: "Projects"
     url: /projects/
+    children:
+      - title: "Landing Zone"
+        url: /projects/landing_zone/
+      - title: "AVM Implementation"
+        url: /projects/avm_implementations/
+      - title: "Security Frameworks"
+        url: /projects/security_frameworks/
   - title: "Blog"
     url: /blog/
   - title: "Timeline"
@@ -12,3 +19,35 @@ main:
     url: /certifications/
   - title: "Contact"
     url: /contact/
+
+# Sidebar navigation for project pages
+projects:
+  - title: "Projects"
+    children:
+      - title: "Back to All Projects"
+        url: /projects/
+      - title: "Landing Zone"
+        url: /projects/landing_zone/
+      - title: "AVM Implementation"
+        url: /projects/avm_implementations/
+      - title: "Security Frameworks"
+        url: /projects/security_frameworks/
+  - title: "Related Resources"
+    children:
+      - title: "Azure Architecture Center"
+        url: https://learn.microsoft.com/en-us/azure/architecture/
+      - title: "Azure Landing Zones"
+        url: https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/
+      - title: "Azure Verified Modules"
+        url: https://azure.github.io/Azure-Verified-Modules/
+
+# Projects sidebar navigation
+projects:
+  - title: Azure Architecture
+    children:
+      - title: "Enterprise Landing Zones"
+        url: /projects/landing_zone/
+      - title: "Azure Verified Modules"
+        url: /projects/avm_implementations/
+      - title: "Security Frameworks"
+        url: /projects/security_frameworks/
