@@ -89,13 +89,24 @@
         const badges = document.querySelectorAll('.certification-image, .archive__item img');
         
         badges.forEach(badge => {
+            // Add loading error handling for better UX
+            badge.addEventListener('error', function() {
+                this.style.backgroundColor = 'var(--azure-blue)';
+                this.style.display = 'flex';
+                this.style.alignItems = 'center';
+                this.style.justifyContent = 'center';
+                this.style.color = 'white';
+                this.style.fontSize = '2em';
+                this.innerHTML = '🏆';
+            });
+            
             badge.addEventListener('mouseenter', function() {
                 this.style.transform = 'scale(1.1) rotate(5deg)';
                 this.style.filter = 'drop-shadow(0 0 20px var(--azure-blue))';
                 this.style.transition = 'all 0.3s ease';
                 
                 // Add pulse effect for Azure badges
-                if (this.src.includes('azure')) {
+                if (this.src.includes('azure') || this.alt.includes('Azure')) {
                     this.classList.add('azure-pulse');
                 }
             });
@@ -446,17 +457,55 @@
             const panel = document.createElement('div');
             panel.className = 'achievements-panel';
             panel.innerHTML = `
-                <div class="achievements-header">🏆 Achievements</div>
+                <div class="achievements-header">🏆 Achievements (${achievements.length}/3)</div>
                 <div class="achievements-list">
                     ${achievements.map(a => `<div class="achievement-item">${a}</div>`).join('')}
                 </div>
+                ${achievements.length === 3 ? '<div class="achievement-item special">🎉 Portfolio Explorer!</div>' : ''}
             `;
             
             document.body.appendChild(panel);
             
+            // Celebration effect for all achievements
+            if (achievements.length === 3 && !localStorage.getItem('portfolioAchievement_master')) {
+                localStorage.setItem('portfolioAchievement_master', 'true');
+                showAchievement('🏆 Portfolio Master!', 'You discovered all hidden features! You are a true explorer!');
+                // Add confetti effect
+                setTimeout(() => {
+                    for (let i = 0; i < 50; i++) {
+                        setTimeout(() => createConfetti(), i * 50);
+                    }
+                }, 1000);
+            }
+            
             // Auto-hide after 3 seconds
             setTimeout(() => panel.style.opacity = '0.3', 3000);
         }
+    }
+
+    function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.innerHTML = ['🎉', '🎊', '⭐', '✨', '🌟'][Math.floor(Math.random() * 5)];
+        confetti.style.cssText = `
+            position: fixed;
+            font-size: 20px;
+            pointer-events: none;
+            z-index: 999;
+            left: ${Math.random() * window.innerWidth}px;
+            top: -50px;
+            transition: all 3s ease-out;
+        `;
+        
+        document.body.appendChild(confetti);
+        
+        // Animate confetti fall
+        setTimeout(() => {
+            confetti.style.transform = `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`;
+            confetti.style.opacity = '0';
+        }, 100);
+        
+        // Remove after animation
+        setTimeout(() => confetti.remove(), 3100);
     }
 
     // Initialize when DOM is ready
