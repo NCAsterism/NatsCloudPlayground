@@ -62,6 +62,22 @@
 - @mcp-integration Rule - Second Brain Integration: When developing MCP server features, consider how they integrate with the broader Second Brain architecture and other MCP servers.
 - @obsidian-integration Rule - Obsidian Vault Integration: When working with the Obsidian MCP server, respect Obsidian's file structure and metadata format to ensure compatibility.
 
+// GitHub Pages Guardrails
+- @github-pages Rule - Guardrails & Gotchas: Critical configuration requirements to prevent common GitHub Pages deployment issues:
+  - **⚠️ baseurl Configuration**: Must be `/NatsCloudPlayground` in `docs/_config.yml` (not `/` or empty)
+  - **📁 .nojekyll Files**: Must exist at both repo root AND `docs/` directory to prevent Jekyll conflicts
+  - **🔧 GitHub Actions Versions**: Always use these specific versions to avoid deployment failures:
+    - `actions/checkout@v4`
+    - `actions/configure-pages@v4` 
+    - `actions/upload-pages-artifact@v3`
+    - `actions/deploy-pages@v4`
+  - **🛠️ Helper Scripts**: Use these validation and troubleshooting tools:
+    - `scripts/validate_github_pages.ps1` - Validate configuration before deployment
+    - `scripts/troubleshoot_github_pages.ps1` - Diagnose and fix common issues
+    - `scripts/github_pages_commands.ps1` - Quick fix commands with auto-carriage returns
+  - **📖 Documentation**: Reference `docs/troubleshooting_github_pages.md` for detailed troubleshooting steps
+  - **🎯 Repository Settings**: Ensure GitHub Pages source is set to "GitHub Actions" (not "Deploy from branch")
+
 // Task and Issue Management
 - @task-sync Rule - GitHub Issue-TaskList Synchronization:
   - Always reference GitHub issues in TaskList.md using the format: `Task description (#XX)` 
