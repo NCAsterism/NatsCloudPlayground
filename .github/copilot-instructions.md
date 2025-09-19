@@ -73,3 +73,12 @@
   - When completing a task in TaskList.md, update the corresponding GitHub issue status
   - Consider creating GitHub workflows to automate synchronization between issues and TaskList.md
   - For complex tasks with multiple subtasks, link to a parent issue in the task description
+
+## Quick Commands
+
+```powershell
+./scripts/validate_github_pages.ps1
+git add .
+git commit -m 'docs: update pages and config'
+git push
+```
