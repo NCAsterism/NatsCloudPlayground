@@ -202,3 +202,422 @@ a:focus, button:focus, input:focus {
   width: 0;
   transition: width 0.2s ease;
 }
+
+/* Easter Egg Styles - Interactive Portfolio Elements */
+
+/* Azure breathing animation for icons */
+@keyframes azure-breathing {
+  0%, 100% { 
+    box-shadow: 0 0 5px rgba(0, 120, 212, 0.3); 
+  }
+  50% { 
+    box-shadow: 0 0 15px rgba(0, 120, 212, 0.6), 0 0 25px rgba(0, 120, 212, 0.4); 
+  }
+}
+
+.azure-breathing {
+  animation: azure-breathing 3s ease-in-out infinite;
+}
+
+.azure-enhanced {
+  animation: azure-breathing 1s ease-in-out infinite;
+  filter: brightness(1.1) saturate(1.2);
+}
+
+/* Azure pulse effect for badges */
+@keyframes azure-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(0, 120, 212, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0); }
+}
+
+.azure-pulse {
+  animation: azure-pulse 1.5s infinite;
+}
+
+/* Enhanced badge hover effects */
+.certification-image, .archive__item img {
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.certification-image:hover, .archive__item img:hover {
+  cursor: help;
+}
+
+/* Special styling for Azure-related images */
+.certification-image[alt*="Azure"], 
+.certification-image[src*="azure"],
+img[alt*="Azure"], 
+img[src*="azure"] {
+  position: relative;
+}
+
+.certification-image[alt*="Azure"]:after, 
+.certification-image[src*="azure"]:after,
+img[alt*="Azure"]:after, 
+img[src*="azure"]:after {
+  content: "💫";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.certification-image[alt*="Azure"]:hover:after, 
+.certification-image[src*="azure"]:hover:after,
+img[alt*="Azure"]:hover:after, 
+img[src*="azure"]:hover:after {
+  opacity: 1;
+}
+
+/* Developer Mode Indicator */
+.developer-mode-indicator {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  font-weight: bold;
+  z-index: 1001;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: rainbow-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes rainbow-glow {
+  0% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); }
+  100% { box-shadow: 0 0 20px rgba(78, 205, 196, 0.5); }
+}
+
+/* Hidden Terminal Styles */
+.hidden-terminal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+  height: 70%;
+  max-height: 600px;
+  background: #1a1a1a;
+  border: 2px solid var(--azure-blue);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  z-index: 1002;
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  animation: terminal-appear 0.3s ease-out;
+}
+
+@keyframes terminal-appear {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.terminal-header {
+  background: var(--azure-blue);
+  color: white;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.terminal-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.terminal-close:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.terminal-content {
+  height: calc(100% - 45px);
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-output {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  color: #00ff00;
+  line-height: 1.4;
+}
+
+.terminal-line {
+  margin-bottom: 5px;
+}
+
+.terminal-command {
+  color: #ffffff;
+}
+
+.terminal-response {
+  color: #00ff00;
+  margin-left: 20px;
+}
+
+.terminal-error {
+  color: #ff6b6b;
+  margin-left: 20px;
+}
+
+.terminal-input-line {
+  padding: 10px 15px;
+  background: #0d1117;
+  border-top: 1px solid #333;
+  display: flex;
+  align-items: center;
+}
+
+.terminal-prompt {
+  color: var(--azure-blue);
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+.terminal-input::placeholder {
+  color: #666;
+}
+
+/* Achievement Notification */
+.achievement-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 1003;
+  min-width: 300px;
+  transform: translateX(400px);
+  transition: transform 0.3s ease;
+}
+
+.achievement-notification.show {
+  transform: translateX(0);
+}
+
+.achievement-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.achievement-description {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Hint Notification */
+.hint-notification {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 120, 212, 0.95);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 0.9em;
+  z-index: 1003;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.hint-notification.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Achievements Panel */
+.achievements-panel {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  background: rgba(26, 26, 26, 0.95);
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--azure-blue);
+  z-index: 1003;
+  backdrop-filter: blur(10px);
+  transition: opacity 0.3s ease;
+}
+
+.achievements-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--azure-blue);
+}
+
+.achievement-item {
+  padding: 5px 0;
+  font-size: 0.9em;
+}
+
+.achievement-item.special {
+  color: gold;
+  font-weight: bold;
+  animation: glow-special 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow-special {
+  0% { text-shadow: 0 0 5px gold; }
+  100% { text-shadow: 0 0 15px gold, 0 0 25px gold; }
+}
+
+/* Matrix Rain Canvas */
+.matrix-rain {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Particles */
+.floating-particle {
+  will-change: transform;
+}
+
+/* Keyboard Hint Styling */
+.keyboard-hint:hover {
+  opacity: 1 !important;
+  transform: scale(1.05);
+}
+
+/* Add subtle hints for interactive elements */
+.btn--primary:hover:after {
+  content: " ✨";
+  animation: sparkle 1s ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* Navigation hint for hidden features */
+.masthead:after {
+  content: "🎮 Hidden features await... try some key combinations!";
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 120, 212, 0.1);
+  color: var(--azure-blue);
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 0.7em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.masthead:hover:after {
+  opacity: 1;
+}
+
+/* Responsive adjustments for Easter eggs */
+@media (max-width: 768px) {
+  .hidden-terminal {
+    width: 95%;
+    height: 80%;
+  }
+  
+  .achievement-notification {
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    transform: translateY(-100px);
+  }
+  
+  .achievement-notification.show {
+    transform: translateY(0);
+  }
+  
+  .achievements-panel {
+    left: 10px;
+    right: 10px;
+  }
+  
+  .keyboard-hint {
+    bottom: 10px !important;
+    right: 10px !important;
+    left: 10px !important;
+    text-align: center;
+  }
+}
+
+/* Accessibility improvements for Easter eggs */
+@media (prefers-reduced-motion: reduce) {
+  .azure-breathing,
+  .azure-enhanced,
+  .azure-pulse,
+  .developer-mode-indicator,
+  .floating-particle {
+    animation: none;
+  }
+  
+  .certification-image,
+  .archive__item img {
+    transition: none;
+  }
+}
+
+/* Focus management for terminal */
+.hidden-terminal:focus-within {
+  border-color: #ffffff;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .hidden-terminal {
+    border-width: 3px;
+  }
+  
+  .achievement-notification {
+    border: 2px solid white;
+  }
+  
+  .developer-mode-indicator {
+    border: 2px solid white;
+  }
+}

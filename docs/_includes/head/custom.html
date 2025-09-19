@@ -1,0 +1,5 @@
+<!-- Custom head additions for portfolio -->
+{% if jekyll.environment == 'production' or jekyll.environment == 'development' %}
+  <!-- Include Easter Eggs JavaScript -->
+  <script src="{{ '/assets/js/easter-eggs.js' | relative_url }}" defer></script>
+{% endif %}
