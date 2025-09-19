@@ -73,3 +73,193 @@
   - When completing a task in TaskList.md, update the corresponding GitHub issue status
   - Consider creating GitHub workflows to automate synchronization between issues and TaskList.md
   - For complex tasks with multiple subtasks, link to a parent issue in the task description
+
+## Developer Workflows
+
+### 📄 Add a New Page
+**How to add a new page under docs/_pages/ and update navigation:**
+
+1. **Create the page file:**
+```powershell
+# Create new page in docs/_pages/
+New-Item -Path "docs/_pages/your_page_name.md" -ItemType File 
+```
+
+2. **Add front matter to the page:**
+```markdown
+---
+layout: single
+title: "Your Page Title"
+permalink: /your_page_name/
+author_profile: true
+---
+
+# Your Page Content
+
+Your content here with links like [example]({{ site.baseurl }}/other-page/).
+```
+
+3. **Update navigation in docs/_data/navigation.yml:**
+```yaml
+# Add to main navigation
+main:
+  - title: "Your Page"
+    url: /your_page_name/
+```
+
+4. **Validate and commit:**
+```powershell
+./scripts/validate_github_pages.ps1 
+git add docs/_pages/your_page_name.md docs/_data/navigation.yml 
+git commit -m "Add new page: Your Page Title" 
+git push 
+```
+
+### 📝 Add a Blog Post
+**How to add a blog post under docs/_posts/ with correct front matter:**
+
+1. **Create the blog post file (use YYYY-MM-DD-title.md format):**
+```powershell
+# Create new blog post
+$date = Get-Date -Format "yyyy-MM-dd"
+New-Item -Path "docs/_posts/$date-your-post-title.md" -ItemType File 
+```
+
+2. **Add required front matter:**
+```markdown
+---
+layout: single
+title: "Your Post Title"
+date: 2025-01-15
+categories: 
+  - Azure
+  - Infrastructure
+tags:
+  - your-tag
+  - another-tag
+toc: true
+header:
+  teaser: /assets/images/your-image-thumb.jpg
+---
+
+# Your Post Content
+
+Your blog post content with site links like [Projects]({{ site.baseurl }}/projects/).
+```
+
+3. **Validate and deploy:**
+```powershell
+./scripts/validate_github_pages.ps1 
+git add docs/_posts/ 
+git commit -m "Add blog post: Your Post Title" 
+git push 
+```
+
+### ✅ Validate and Deploy
+**How to validate and deploy using the validation script:**
+
+1. **Run the GitHub Pages validation script:**
+```powershell
+./scripts/validate_github_pages.ps1 
+```
+
+2. **If validation passes, commit and push changes:**
+```powershell
+git add . 
+git commit -m "Update GitHub Pages configuration" 
+git push 
+```
+
+3. **For comprehensive deployment with validation:**
+```powershell
+./scripts/deploy_github_pages.ps1 
+```
+
+4. **Check deployment status:**
+- Monitor GitHub Actions at: `https://github.com/NCAsterism/NatsCloudPlayground/actions`
+- View site at: `https://ncasterism.github.io/NatsCloudPlayground/`
+
+### 🏗️ Use AVM Bicep Module
+**How to use Azure Verified Modules (AVM) with reference to projects structure:**
+
+1. **Reference the AVM implementation guide:**
+```powershell
+# View existing AVM examples
+Get-Content "projects/avm_implementations.md" 
+```
+
+2. **Create a new Bicep file using AVM modules:**
+```bicep
+// Example: Deploy Virtual Network using AVM
+module vnet 'br/public:avm/res/network/virtual-network:1.0.1' = {
+  name: 'vnetDeployment'
+  params: {
+    name: 'hub-vnet'
+    addressPrefixes: [
+      '10.0.0.0/16'
+    ]
+    subnets: [
+      {
+        name: 'GatewaySubnet'
+        addressPrefix: '10.0.0.0/24'
+      }
+    ]
+    location: location
+    tags: tags
+  }
+}
+```
+
+3. **Document the implementation:**
+```powershell
+# Update the AVM implementations documentation
+# Reference: docs/projects/avm_implementations.md
+# Reference: projects/alz_bicep/ (when added as submodule)
+```
+
+4. **Deploy and validate:**
+```powershell
+az deployment group create --resource-group myRG --template-file main.bicep 
+git add . 
+git commit -m "Add AVM Bicep implementation" 
+git push 
+```
+
+### 📦 Add Git Submodule
+**How to add a Git submodule into projects/ directory:**
+
+1. **Add the submodule:**
+```powershell
+# Example: Add Azure Landing Zone Bicep as submodule
+git submodule add https://github.com/Azure/ALZ-Bicep.git projects/alz_bicep 
+```
+
+2. **Initialize and update submodules:**
+```powershell
+git submodule init 
+git submodule update 
+```
+
+3. **Commit the submodule addition:**
+```powershell
+git add .gitmodules projects/alz_bicep 
+git commit -m "Add ALZ-Bicep as submodule in projects/alz_bicep" 
+git push 
+```
+
+4. **Update submodule to latest version:**
+```powershell
+cd projects/alz_bicep 
+git pull origin main 
+cd ../.. 
+git add projects/alz_bicep 
+git commit -m "Update alz_bicep submodule to latest" 
+git push 
+```
+
+5. **Clone repository with submodules (for team members):**
+```powershell
+git clone --recurse-submodules https://github.com/NCAsterism/NatsCloudPlayground.git 
+# Or if already cloned:
+git submodule update --init --recursive 
+```
