@@ -18,10 +18,10 @@
 - @tenant-safety Rule - Warn About Production Impact: For scripts that modify Intune resources, include warnings about testing in non-production environments first.
 - @intune-policy Rule - Intune Policy Management:
   - Organize policies by tenant and category
-  - Use consistent naming conventions for policies (follow existing patterns in exports folder)
+  - Use consistent naming conventions for policies (follow existing patterns in the repository)
   - Implement role-based access using Microsoft Entra ID PIM
   - Include clear documentation for policy implementation requirements
-  - For policy exports, maintain structure with JSON files and README documentation
+  - For policy management, maintain structure with JSON files and README documentation
   - Consider Conditional Access implications when modifying device policies
   - Always validate policy assignments before applying to production
 - @adhd-friendly Rule - ADHD-Friendly Documentation & UI:
@@ -33,11 +33,11 @@
   - Provide explicit energy and time estimates for tasks
   - Use color and visual hierarchies for important information
 - @repo-structure Rule - Repository Organization:
-  - Follow the established directory structure in file_tree.md
+  - Follow the established directory structure shown in README.md and docs/index.md
   - Use snake_case for all files and folders
   - Maintain README.md files in each directory
   - Place documentation in the appropriate docs/ subdirectory
-  - Organize automation scripts by purpose in the automation/ directory
+  - Organize automation scripts by purpose in the scripts/ directory
   - Follow naming conventions for files based on their directory context
   - Add appropriate status indicators (✅,🚧,📅) to documentation files
 - @devops Rule - Follow Git Best Practices: When suggesting changes to the codebase, recommend proper Git workflows such as:
